@@ -1,0 +1,52 @@
+/* breakpoints */
+$sm: 580px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+$xxm: 1440px;
+$xxl: 1600px;
+
+/* media queries */
+@custom-media --up-sm (width >= $sm);
+@custom-media --up-md (width >= $md);
+@custom-media --up-lg (width >= $lg);
+@custom-media --up-xl (width >= $xl);
+@custom-media --up-xxm (width >= $xxm);
+@custom-media --up-xxl (width >= $xxl);
+@custom-media --down-sm (width < $sm);
+@custom-media --down-md (width < $md);
+@custom-media --down-lg (width < $lg);
+@custom-media --down-xl (width < $xl);
+@custom-media --down-xxm (width < $xxm);
+@custom-media --down-xxl (width < $xxl);
+
+/* misc */
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+:root {
+  /* breakpoints (read-only for js) */
+  --sm: $sm;
+  --md: $md;
+  --lg: $lg;
+  --xl: $xl;
+  --xxm: $xxm;
+  --xxl: $xxl;
+
+  /* spacing */
+
+  /* color-scheme */
+  --primary-color: red;
+  --secondary-color: green;
+
+  @media (--up-sm) {
+    --primary-color: blue;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}

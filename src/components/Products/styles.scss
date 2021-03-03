@@ -1,0 +1,7 @@
+.products {
+  &_active {
+    @media (--up-sm) and (--down-md) {
+      color: var(--primary-color);
+    }
+  }
+}

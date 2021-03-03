@@ -12,7 +12,7 @@ const useController = <T extends BaseController<T['state']>>(Controller: {
   const [state, setState] = useState(controller.state);
 
   useMemo(() => {
-    controller.setStateHandler = setState;
+    controller.subscribe(setState);
   }, []);
 
   useEffect(() => {

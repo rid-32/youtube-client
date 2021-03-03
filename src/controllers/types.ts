@@ -5,7 +5,11 @@ export interface ISetStateHandler<S extends IState> {
 }
 
 export interface IController<S extends IState> {
+  state: S;
+  _setStateHandler: ISetStateHandler<S>;
+
   setState(arg0: Partial<S>): void;
+  subscribe(arg0: ISetStateHandler<S>): void;
   mounted(): void;
   updated(): void;
   unmounted(): void;

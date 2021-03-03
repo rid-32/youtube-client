@@ -11,7 +11,7 @@ class BaseController<S extends IState> implements IController<S> {
     };
   }
 
-  set setStateHandler(callback: ISetStateHandler<S>) {
+  subscribe(callback: ISetStateHandler<S>) {
     this._setStateHandler = callback;
   }
 

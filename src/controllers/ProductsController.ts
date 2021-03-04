@@ -6,12 +6,19 @@ type ProductsControllerState = {
 };
 
 class ProductsController extends BaseController<ProductsControllerState> {
+  value: number;
+
   constructor() {
     super();
 
-    this.state = {
-      value: 0,
-      handleClick: this.handleClick.bind(this),
+    this.value = 0;
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  get state() {
+    return {
+      value: this.value,
+      handleClick: this.handleClick,
     };
   }
 
@@ -20,7 +27,8 @@ class ProductsController extends BaseController<ProductsControllerState> {
   }
 
   handleClick() {
-    this.setState({ value: this.state.value + 1 });
+    this.value++;
+    this.setState();
   }
 }
 
